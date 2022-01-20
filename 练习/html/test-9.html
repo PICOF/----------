@@ -1,0 +1,159 @@
+<!--这一次我们讨论一下web存储的问题，http协议具有无状态性，记不住东西，得依靠其它存储方式-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!--草，一不小心写成了todo-list-->
+<style>
+    .todo td{
+        background-color: rgb(113, 207, 219);
+            border-radius: 10%;
+    }
+    .done td{
+        background-color: rgb(145, 201, 139);
+            border-radius: 10%;
+    }
+    input{
+        border-radius: 10%;
+        border: none;
+        background-color: rgb(219, 211, 211);
+    }
+    button{
+        border-radius: 10%;
+        border: none;
+        padding: 5px;
+    }
+    button:active{
+        background-color: rgb(104, 228, 236);
+    }
+</style>
+<body>
+    <input id="task" type="text"> <input id="time" type="date"> <button class="add">加入</button>
+    <br/>输入加入事项
+    <table class="todo" cellspacing="10px" cellpadding="10px">
+        <caption>计划表</caption>
+        <tr>
+            <td>事件名</td>
+            <td>立项时间</td>
+            <td>DDL</td>
+        </tr>
+        <tr draggable="true" class="obj">
+            <td>乐</td>
+            <td>今、ここだ‼</td>
+            <td>昨天</td>
+            <td><button>删除</button></td>
+        </tr>
+    </table>
+    <table class="done" cellspacing="10px" cellpadding="10px">
+        <caption>已完成</caption>
+        <tr>
+            <td>事件名</td>
+            <td>立项时间</td>
+            <td>DDL</td>
+        </tr>
+        <tr draggable="true" class="obj">
+            <td>悲</td>
+            <td>何時から</td>
+            <td>昨天</td>
+            <td><button>删除</button></td>
+        </tr>
+    </table>
+<script>
+    var t1=document.querySelector('.todo');
+    var t2=document.querySelector('.done');
+    var add=document.querySelector(".add");
+    var cache=null;
+    if(localStorage.getItem("todo")!=null){
+        t1.innerHTML=localStorage.getItem("todo");
+    }
+    if(localStorage.getItem("done")){
+        t2.innerHTML=localStorage.getItem("done");
+    }
+    var box=document.querySelectorAll('.obj');
+    var del=document.querySelectorAll('.obj button');
+    for(var i=0;i<box.length;i++){
+        box[i].ondragstart=function(){
+            cache=this;
+        }
+        box[i].ondragend=function(){
+            cache=null;
+        }
+        del[i].onclick=function(){
+            this.parentNode.parentNode.remove();
+            localStorage.setItem('todo',t1.innerHTML);
+            localStorage.setItem('done',t2.innerHTML);
+        }
+    }
+    add.onclick=function(){
+        var now = new Date();
+        var task=document.getElementById('task');
+        var time=document.getElementById('time');
+        if(!task.value){
+            alert("请输入待办事项！");
+            return;
+        }else if(!time.value){
+            alert("请输入DDL！");
+            return;
+        }
+        let tr=document.createElement('tr');
+        tr.className="obj";
+        tr.draggable=true;
+        let td1=document.createElement('td');
+        td1.innerText=task.value;
+        let td2=document.createElement('td');
+        td2.innerText=now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate();
+        let td3=document.createElement('td');
+        td3.innerText=time.value;
+        let td4=document.createElement('td');
+        let btn4=document.createElement('button');
+        btn4.innerText="删除";
+        btn4.onclick=function(){
+            this.parentNode.parentNode.remove();
+            localStorage.setItem('todo',t1.innerHTML);
+            localStorage.setItem('done',t2.innerHTML);
+        }
+        td4.appendChild(btn4);
+        tr.appendChild(td1);
+        tr.appendChild(td2);
+        tr.appendChild(td3);
+        tr.appendChild(td4);
+        tr.ondragstart=function(){
+            cache=this;
+        }
+        tr.ondragend=function(){
+            cache=null;
+        }
+        t1.appendChild(tr);
+        task.value=null;
+        time.value=null;
+        localStorage.setItem('todo',t1.innerHTML);
+    }
+    t1.ondragover = t2.ondragover = function (e) {
+    e.preventDefault();
+    }
+    t1.ondrop = t2.ondrop = function () {
+        this.appendChild(cache);
+        localStorage.setItem('todo',t1.innerHTML);
+        localStorage.setItem('done',t2.innerHTML);
+    }
+</script>
+</body>
+</html>
+<!--1、window.sessionStorage 会话存储：
+    -保存在内存中。
+    -生命周期为关闭浏览器窗口。也就是说，当窗口关闭时数据销毁。
+    -在同一个窗口下数据可以共享。
+    2、window.localStorage 本地存储：
+    -有可能保存在浏览器内存里，有可能在硬盘里。
+    -永久生效，除非手动删除（比如清理垃圾的时候）。
+    -可以多窗口共享。
+
+    web存储的一些特性：
+    -设置、读取方便。
+    -容量较大，sessionStorage 约5M、localStorage 约20M。
+    -只能存储字符串，可以将对象 JSON.stringify() 编码后存储。
+-->

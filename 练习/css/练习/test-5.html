@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #d1:link {
+            color: aqua;
+        }
+
+        #d1:visited {
+            color: rgb(255, 25, 25);
+        }
+        /*
+            :hover “悬停”：鼠标放到标签上的时候
+            :active “激活”： 鼠标点击标签，但是不松手时。
+        */
+        #d1:hover {
+            color: black;
+        }
+        #d1:active {
+            color: yellow;
+        }
+        /*注意在css中，这四种状态必须按照固定的顺序写：
+            "link-->visited-->hover-->active"
+            否则失效
+
+            另外提一句题外话，经过实验得出——浏览器对“link”和“visited”的区分貌似是以href指向网址是否访问过来判断的，
+            因此该两种伪类对于同为标签a的锚点是不起效果的。
+        
+            一般先写a，再写伪类
+
+            最标准的写法，就是把link、visited、hover这三个伪类都要写。
+            但是前端开发工程师在大量的实践中，发现不写link、visited也挺兼容。
+        */
+        input{
+            border: 1px solid black;
+            color: black;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        input:focus{
+            border: 8px dotted red;
+            color: rgb(66, 209, 73);
+            background-color: brown;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text">
+    <div><a href="https://www.baidu.com" id="d1">Hello</a></div>
+</body>
+
+</html>

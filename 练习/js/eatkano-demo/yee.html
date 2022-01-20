@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+    <div class="block bl">猜猜？</div>
+    <div class="block t1">猜猜？</div>
+    <div class="block bl">猜猜？</div>
+    <div class="block t5">猜猜？</div>
+    <div class="block t1">猜猜？</div>
+    <div class="block bl">猜猜？</div>
+    <div class="block bl">猜猜？</div>
+    <div class="block t2">猜猜？</div>
+    <div class="block t2">猜猜？</div>
+    <div class="block bl">猜猜？</div>
+    <div class="block bl">猜猜？</div>
+    <div class="block t3">猜猜？</div>
+    <div class="block bl">猜猜？</div>
+    </div>
+    <script>
+        var block=document.querySelectorAll('.box .block');
+        var box=document.querySelectorAll('.box .t1,.box .t2,.box .t3,.box .t4,.box .t5');
+        for(var i=0;i<block.length;i++){
+            block[i].onclick=function(){
+                console.log(this);
+            }
+        }
+        for(var i=0;i<box.length;i++){
+            box[i].click();
+        }
+    </script>
+</body>
+</html>

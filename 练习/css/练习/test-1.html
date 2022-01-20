@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .t1{
+        font-size: 50px; 		/*字体大小*/
+        line-height: 30px;      /*行高*/
+        font-family: 幼圆,黑体; 	/*字体类型：如果没有幼圆就显示黑体，没有黑体就显示默认*/
+        font-style: italic ;		/*italic表示斜体，normal表示不倾斜*/
+        font-weight: bold;	/*粗体*/
+        font-variant: small-caps;  /*小写变大写*/
+    }
+    .t2{
+        font:400 20px/200%  "Times New Roman","Microsoft YaHei","SimSun";
+    }
+    .text{
+        line-height: 30px;  
+        vertical-align: middle;
+        font-family: 'Times New Roman',幼圆;/*这么整就让英文匹配前面的，中文匹配不了第一个就匹配后面的幼圆*/
+    }
+    ul{
+        list-style-image:url(../image/ying.jpg);
+        margin-left: 400px;/*主要不加这个就缩到里面去了*/
+        zoom: 50%;
+    }
+</style>
+<body>
+    <p class="t1">Hi!Jack!</p>
+    <p class="t2">这里是地鼠一号，总部听得到吗</p>
+    <p class="text">Hello,everyone <br/>
+    like it ，阿斯顿大傻逼<br/>
+    video <br>
+    good bye~
+    </p>
+    <ul>
+        <li>Genshin</li>
+        <li>旅行者</li>
+    </ul>
+</body>
+</html>

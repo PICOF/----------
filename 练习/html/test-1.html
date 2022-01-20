@@ -1,0 +1,30 @@
+<!DOCTYPE html><!--第一行一定是它，叫做文档声明头，即 DocType Declaration，简称DTD。
+    DTD可告知浏览器文档使用哪种 HTML 或 XHTML 规范。-->
+<html lang="en"><!--指定语言：一般遇到的就是 en：英语   zh-CN：中文-->
+<head><!--面试题：
+    问：网页的head标签里面，表示的是页面的配置，有什么配置？
+    答：字符集、关键词、页面描述、页面标题、IE适配、视口、iPhone小图标等等。-->
+    <meta charset="UTF-8"><!--charset字符集标注编码格式-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--width=device-width ：表示视口宽度等于屏幕宽度。
+        viewport 这个知识点，初学者还比较难理解，以后学 Web 移动端的时候会用到。(多半是响应式的知识（口胡）)-->
+    <meta name="Keywords" content="first lesson" />
+    <!--这些关键词，就是告诉搜索引擎，这个网页是干嘛的，能够提高搜索命中率。让别人能够找到你，搜索到你。-->
+    <meta name="Description" content="学习了前端第一课的产出页面" />
+    <!--只要设置Description页面描述，那么百度搜索结果，就能够显示这些语句，这个技术叫做SEO（search engine optimization，搜索引擎优化）。-->
+    <!--<meta http-equiv="refresh" content="3;http://www.baidu.com">
+    上面这个标签的意思是说，3秒之后，自动跳转到百度页面。-->
+    <title>烧酒</title>
+</head>
+<body link="blue" alink="red" vlink="green">
+    <h3>我是三级标题</h3>
+    <img src="head.jpg" alt="" />
+    <!--实际上大部分标记都是“双边标记”，少部分会像这里的img一样属于“单边标记”-->
+    <p><a href="https://master-beast.gitee.io/">点我进入博客</a></p>
+    <p><a href="#">点我</a></p>
+</body>
+</html>
+<!--补充一点关于编码格式的问题，一般使用UTF-8不会出现大问题，但是尺寸较大文件臃肿；
+    使用gb2312较为小巧但只有中文和少数外文；
+Unicode就别说了更大，每个都要4个字节存储（UTF-8本身就算是Unicode的优化版）-->

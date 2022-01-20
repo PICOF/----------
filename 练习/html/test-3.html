@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul type="square">
+        <li>离谱</li>
+        <li>雀食</li>
+    </ul>
+    <ul type="circle">
+        <li>离谱</li>
+        <li>雀食</li>
+    </ul>
+    <ul>
+        <li>离谱</li>
+        <li type="circle">雀食</li>
+        <li><b>套套</b>
+            <ul>
+                <li>看我</li>
+                <li>嵌套</li>
+            </ul>
+        </li>
+    </ul><!--这么强大的嵌套能力，“li”就是一个容器-->
+    <ol type="A" start="2">
+        <li>what's</li>
+        <li>up</li>
+    </ol>
+    <dl>
+        <dt>第一条</dt>
+        <dd>你若是觉得你有实力和我玩，良辰不介意奉陪到底</dd>
+        <dd>我会让你明白，我从不说空话</dd>
+        <dd>我是本地的，我有一百种方式让你呆不下去；而你，无可奈何</dd>
+    
+        <dt>第二条</dt>
+        <dd>良辰最喜欢对那些自认能力出众的人出手</dd>
+        <dd>你可以继续我行我素，不过，你的日子不会很舒心</dd>
+        <dd>你只要记住，我叫叶良辰</dd>
+        <dd>不介意陪你玩玩</dd>
+        <dd>良辰必有重谢</dd>
+    </dl>
+    <!--<dl>英文单词：definition list，没有属性。dl的子元素只能是dt和dd。
+<dt>：definition title 列表的标题，这个标签是必须的
+<dd>：definition description 列表的列表项，如果不需要它，可以不加
+    备注：dt、dd只能在dl里面；dl里面只能有dt、dd。-->
+    <table border="1">
+        <caption><b>这瓜保熟吗</b></caption>
+        <tr>
+            <td>华强</td>
+            <td>买瓜</td>
+            <td>萨日朗</td>
+        </tr>
+        <tr>
+            <td>郝哥</td>
+            <td>卖瓜</td>
+            <td>被萨日朗</td>
+        </tr>
+        <tr>
+            <td>小哥</td>
+            <td colspan="2">喊萨日朗</td>
+        </tr>
+    </table>
+    <!--html表格和日常说的表格有些许不一样，并不是直接由行和列构成，
+        而是先由列<td>构成行<tr>，再由组合好后的行构成-->
+</body>
+</html>

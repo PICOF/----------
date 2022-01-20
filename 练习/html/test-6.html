@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--  条件注释 只有ie能够识别-->
+
+<!--[if lte ie 8]>
+    <script src="html5shiv.min.js"></script>
+<![endif]-->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--之前select是选条，内部装的是option；
+    现在h5提供了一种数据列表，也装的是option，
+    文本框里面除了option提供的选项还可以填入其他的-->
+    <input type="text" list="dl">
+    <!--使用list和id将两个元素绑定，使用name无效-->
+    <datalist id="dl">
+        <option>野鸡大学</option>
+        <option>家里蹲大学</option>
+        <option>哈尔滨佛学院</option>
+    </datalist><br/>
+    <!--audio音频，视频就video-->
+    <audio loop autoplay controls>
+        <!--兼容性写法，如果资源不能被浏览器识别，就弹出“抱歉……”-->
+        <source src="Falcom Sound Team jdk - THE SIBYLLINE ROAD.mp3"/>
+        抱歉，你的浏览器暂不支持此音频格式
+    </audio>
+    <!--不写controls就隐身了，可以当背景音乐用-->
+    <meter value="10" min="0" max="100"  low="60"  high="80" id="mt"></meter>
+    <input type="range" value="98" id="rg"><h1 id="v"></h1>
+    <!--DOM操作：不是DOOM操作（好冷）-->
+    <a href="HTML_DOM.pdf">点击查看DOM操作相关文档</a>
+    <script>
+        var rg=document.getElementById("rg");
+        var dl=document.getElementById("mt");
+        var v=document.getElementById("v");
+        rg.onchange=function(){
+            dl.value=rg.value;
+            v.textContent=rg.value;
+        }
+    </script>
+</body>
+</html>

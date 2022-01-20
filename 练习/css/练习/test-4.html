@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="1a.css">
+    <link rel="alternate stylesheet" href="1b.css">
+    <link rel="alternate stylesheet" href="1c.css">
+    <title>Document</title>
+    <style>
+        div>p{
+            color: blue;
+        }/*子代选择器*/
+        div p{
+            font-weight: 800;
+        }/*后代选择器*/
+    </style>
+</head>
+<body>
+    <div>你能发现被隐藏的秘密吗</div>
+    <div>
+        Hello
+        <p>Hello</p>
+        <ul>
+            <li>
+                <p>Hello</p>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<!--这里顺便也说一下css选择器的问题
+    虽然之前也使用过很多次了。。。
+    基本就以下几种：
+    标签选择器：针对一类标签
+    ID 选择器：针对某一个特定的标签使用
+    类选择器：针对你想要的所有标签使用
+    通用选择器（通配符）：针对所有的标签都适用（不建议使用）
+
+    通用就是惯用的 “*”，全配上了一般没有什么意义
+    标签选择器选择 html 自带的标签，直接写
+    ID 选择器前面加 “#” (HTML 页面，不能出现相同的 id，哪怕他们不是一个类型)
+    类选择前面加 “.”
+
+    高级选择器
+    后代选择器：用空格隔开，只要是后代都能选中
+    交集选择器：选择器之间紧密相连（一般第一个是标签名）
+    并集选择器（分组选择器）：用逗号隔开
+    伪类选择器
+-->

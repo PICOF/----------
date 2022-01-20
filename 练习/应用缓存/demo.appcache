@@ -1,0 +1,9 @@
+CACHE MANIFEST
+CACHE:
+#需要缓存的文件
+    ./404.html
+NETWORK:
+#需要网络才能加载的文件
+FALLBACK:
+#当访问不到某资源时，用另一资源替换
+    ./tan90.html ./404.html

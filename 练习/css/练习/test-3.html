@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.img_wrap {
+			display: flex;
+		}
+
+		.img {
+			width: 300px;
+			height: 200px;
+			border:1px solid red;
+			background: url(../image/BN.jpg) no-repeat;
+			margin-right: 20px;
+		}
+
+		.div1 {
+			border-width: 7px;
+            padding: 10px;
+			background-size: cover;
+            background-origin: content-box;/*从哪里开始加载*/
+			background-clip: border-box;/*超出指定区域的部分会被裁掉*/
+			/*这俩概念看的蛮懵逼的，建议谷歌一下，这里有例子：
+			https://www.w3school.com.cn/tiy/c.asp?f=css_background-origin*/
+		}
+		.div2{
+            background-position: center;
+			background-size: contain;
+		}
+		.box{
+			height: 700px;
+			margin: 100px auto;
+			background: url(../image/promare.png) no-repeat center,
+			url(../image/BN.jpg) no-repeat 30px 0px fixed,
+			url(../image/bmwa.jpg) no-repeat right;
+		}
+		.gradient{
+			height: 400px;
+			width: 600px;
+			margin-bottom: 20px;
+			border-radius: 10%;
+		}
+		.gradient img{
+			zoom: 20%;
+			display:flex;
+			text-align: center;
+			border-radius: 10%;
+		}
+		.gradient p{
+			font-family: 幼圆;
+			text-align: center;
+			font-size: larger;
+			font-weight: 800;
+		}
+		.diva{
+			background-image: linear-gradient(to right,white,black);
+		/*
+		background-image: linear-gradient(方向, 起始颜色, 终止颜色);
+		方向可以是：to left、to right、to top、to bottom、角度30deg（指的是顺时针方向30°）
+		可以加入多种颜色，构建彩虹或者突变
+		*/
+		}
+		.divb{
+			background-image:radial-gradient(400px at center,white 0%,black 50%,white 90%,black 100%);
+			/*
+			background-image: radial-gradient(辐射的半径大小, 中心的位置, 起始颜色, 终止颜色);
+			中心点的位置可以是：at left right center bottom top。如果以像素为单位，则中心点参照的是盒子的左上角。
+			*/
+		}
+		.divc{
+			background-image: linear-gradient(to right,
+            yellow 0%,
+            red 40%,
+            green 70%,
+            blue 100%);
+		}
+		.eva{
+			height: 400px;
+			width: 400px;
+			background: url(../image/eva.jpg) no-repeat;
+			background-size: cover;
+			clip-path: polygon(50% 0%,100% 50%,50% 100%,0% 50%);
+			transition:clip-path 0.3s ease;
+		}
+		/*另外，通过 clip-path: (svg) 可以导入svg矢量图，实现 iOS图标的圆角。这里就不详细展开了。*/
+		.eva:hover{
+			clip-path: polygon(0% 0%,100% 0%,100% 100%,0% 100%);
+			transition:clip-path 0.3s ease;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="eva"></div>
+	<section class="img_wrap">
+		<div class="img div1"><div>sadsd</div></div>
+		<div class="img div2"></div>
+	</section>
+	<div class="box"></div>
+	<div class="gradient diva"><img src="../image/eva.jpg" alt=""><p>线性渐变(linear-gradient)：沿着某条直线朝一个方向产生渐变效果</p></div>
+	<div class="gradient divb"><img src="../image/eva.jpg" alt=""><p>径向渐变(radial-gradient)：沿着指定⚪的半径产生渐变效果</p></div>
+	<div class="gradient divc"><img src="../image/eva.jpg" alt=""><p>线性渐变重复使用</p></div>
+</body>
+
+</html>

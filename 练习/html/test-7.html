@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .two {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        left: 300px;
+        top: 100px;
+        border: 1px solid #000;
+        background-color: red;
+    }
+</style>
+<body>
+    <!--开了draggable就可以拖拽元素了，图片和超链接是默认可拖拽的-->
+    <textarea rows="10" cols="10" readonly draggable="true">
+米奇妙妙屋
+拖拽我看看
+    </textarea>
+    <div id="d"></div>
+    <div class="two"></div>
+    <!--拖拽也是有相应的事件监听的-->
+    <script>
+        var d=document.getElementById("d");
+        var t=document.querySelector("textarea");
+        t.ondragstart=function(){
+            d.textContent="拖拽中";
+        }
+        t.ondragend=function(){
+            d.textContent="";
+        }
+        var two = document.querySelector('.two');
+        //目标元素的拖拽事件
+
+        // 当被拖拽元素进入时触发
+        two.ondragenter = function () {
+            console.log("来了.");
+        }
+
+        // 当被拖拽元素离开时触发
+        two.ondragleave = function () {
+
+            console.log("走了..");
+        }
+
+        // 当拖拽元素在 目标元素上时，连续触发
+        two.ondragover = function (e) {
+            //阻止拖拽事件的默认行为
+            e.preventDefault(); 
+            //【重要】一定要加这一行代码，否则，后面的方法 ondrop() 无法触发。
+            console.log("over...");
+        }
+
+        // 当在目标元素上松开鼠标是触发
+        two.ondrop = function () {
+            console.log("松开鼠标了....");
+        }
+    </script>
+</body>
+</html>

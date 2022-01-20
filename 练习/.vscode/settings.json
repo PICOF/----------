@@ -1,0 +1,5 @@
+{
+    "browser-preview.startUrl": "https://www.google.com",
+    "browser-preview.ignoreHttpsErrors": false,
+    "liveServer.settings.multiRootWorkspaceName": "练习"
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .circle {
+        width: 250px;
+            height: 250px;
+            background-color: green;
+            margin: 100px auto;
+            border-radius: 50%;
+    }
+    .circle:-webkit-full-screen {
+            background-color: red;
+        }
+</style>
+<body>
+    <div class="circle"></div>
+<script>
+    var c=document.querySelector('.circle');
+    c.onclick=function(){
+        if(c.requestFullscreen){
+            c.requestFullscreen();
+        }else if (box.webkitRequestFullScreen) {
+            box.webkitRequestFullScreen();
+        } else if (box.mozRequestFullScreen) {
+            box.mozRequestFullScreen();
+        }
+        // 说白了就是判断当前浏览器是否可以进行全屏，
+        // 加前缀是为了兼容不同浏览器
+    }
+</script>
+</body>
+</html>

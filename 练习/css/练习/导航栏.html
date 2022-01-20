@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    ul{
+        margin-top: 0;
+        margin-bottom: 0px;
+        padding: 0 20px;
+        list-style: none;/*去掉列表前面的圆点*/
+        width: 400px;
+        height: 60px;
+        background-color: gray;
+    }
+    li{
+        float:left;
+        height:60px;
+        width: 100px;
+        transition: background-color 0.3s ease;
+    }
+    li:hover{
+        background-color: rgb(110, 107, 107);
+        transition: background-color 0.3s ease;
+        /*https://blog.csdn.net/dbe0810/article/details/101325909 、
+        关于transition这个属性之前魔改博客的时候就用过了，csdn找水文倒是蛮方便*/
+    }
+    a{
+        text-decoration: none;/*去掉超链的下划线*/
+        font-size: 20px;
+        text-align: center;
+        line-height: 60px;
+        color: aliceblue;
+        font-family: 'Times New Roman', 幼圆;
+    }
+    body{
+        height: 2000px;
+        background: rgb(158, 219, 230) url(../image/ying.jpg) no-repeat 800px 75px scroll;
+        background-size: 23.65%;
+        /*另外，cover 和 contain，cover是填满可能会有裁剪，contain则是完整显示，可能留白*/
+    }
+    #pic{
+        zoom: 69.7%;
+        margin-bottom: -5px;
+    }
+    div{
+        margin-top: 20px;
+        overflow: hidden;
+        border-radius: 25px;
+        box-shadow: 0 10px 20px 0 #323232;
+        margin-left: 20px;
+        position: fixed;
+        transition:margin-top 0.5s ease;
+    }
+    div:hover{
+        margin-top: 5px;
+        transition:margin-top 0.5s ease;
+    }
+    p{
+        font: 800 20px/200% 幼圆;
+        margin-left: 79%;
+        margin-top: 30%;
+        position: absolute;
+    }
+</style>
+<body>
+    <div>
+        <ul>
+            <a href="https://master-beast.gitee.io/" target="_blank"><li>我的blog</li></a>
+            <a href=""><li>关于</li></a>
+        <a href=""><li>新发布</li></a>
+            <a href="../../html/test-9.html"><li>事项表</li></a>
+        </ul>
+        <img src="../image/bmwa.jpg" alt="" id="pic" draggable="false">
+    </div>
+    <p>真好看！！</p>
+</body>
+</html>

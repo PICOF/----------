@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="post" action="#">
+        命名<input type="text" placeholder="新的文件" required/>
+        <input type="file"/><br/>
+        <input type="submit"/>
+        <input type="reset"/>
+        <input type="date" readonly/>
+        <select><!--不加size就是弹出选条-->
+            <option>简单</option>
+            <option>普通</option>
+            <option>困难</option>
+        </select>
+        <select size="3" multiple><!--multiple表示多选项（虽然要按住ctrl才能多选）-->
+            <option>简单</option>
+            <option selected>普通</option>
+            <option selected>困难</option><!--selected表示预选中选项-->
+        </select>
+        <fieldset><!--可以将相关元素分组-->
+            <legend>健康信息</legend><!--类似于标题吧？-->
+            身高：<input type="text" />
+            体重：<input type="text" />
+            <input type="radio" name="sex" id="nan" /><label for="nan">男</label>
+            <!--本来只能点左边那个小圆点才能选中，现在用label通过相同id绑定后点label内的文字也可以选中了-->
+            <input type="radio" name="sex" id="nv"  /><label for="nv">女</label>
+        </fieldset>
+    </form>
+    <embed src="Falcom Sound Team jdk - THE SIBYLLINE ROAD.mp3" width="300px" height="200px" loop="-1">
+    <!--主要应用Netscape浏览器，它不是W3C规范。-->
+    <!--还有一种<object>标签：播放多媒体文件（音频、视频等）
+    主要应用IE浏览器，它是W3C规范。但是flash已经被时代抛弃了吧……-->
+    <marquee behavior="scroll" scrollamount="30" direction= loop="-1" width="300" height="200" bgcolor="#8c5dc1" style="font-size: 100px;">asd</marquee>
+    <!--蛮好玩的滑动字幕，主要留意一下方向与行为模式，大学门禁验证页就用了这种东西呢~-->
+</body>
+</html>
